@@ -8,11 +8,11 @@
 
 项目以服务端-客户端架构为基础，实现了一个服务端，以及两个客户端—学生客户端和教务/管理员客户端。其流程图如下：
 
-![1574411203293](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411203293.png)
+![1574411203293](https://github.com/AlieZ22/CourseSystem/tree/master/res/1.png)
 
-![1574411227145](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411227145.png)
+![1574411227145](https://github.com/AlieZ22/CourseSystem/tree/master/res/2.png)
 
-![1574411239591](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411239591.png)
+![1574411239591](https://github.com/AlieZ22/CourseSystem/tree/master/res/3.png)
 
 
 
@@ -26,7 +26,7 @@
 
 基础类：Student(学生对象), Course(课程对象), SelectInfo(选课信息)
 
-![1574411365344](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411365344.png)
+![1574411365344](https://github.com/AlieZ22/CourseSystem/tree/master/res/4.png)
 
 接口：Cacheable, ClientView, ManagerClientView, StudentClientView, ManagerStrategy, 
 
@@ -44,15 +44,15 @@ ManagerClient,  ManagerStrategyImpl,  ManagerWindow
 
 StudentClient,  StudentStrategyImpl,  StudentWindow
 
-![1574411422792](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411422792.png)
+![1574411422792](https://github.com/AlieZ22/CourseSystem/tree/master/res/5.png)
 
-![1574411438835](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411438835.png)
+![1574411438835](https://github.com/AlieZ22/CourseSystem/tree/master/res/6.png)
 
 ### 3，关于缓存模块的实现
 
 在该项目中，我负责缓存模块的实现。详细设计如下：
 
-![1574411510700](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411510700.png)
+![1574411510700](https://github.com/AlieZ22/CourseSystem/tree/master/res/7.png)
 
 基于可复用的考虑，我先实现了一个带有泛型参数的LRUCache<K, V>，具有基本的LRU置换功能，但它本身仍是抽象类。落实到具体的应用场景也就是这个选课系统，继承LRUCache<Student, CoursePage>实现了StudentCache。（说明：CoursePage封装了对应学生的选课信息数组）
 
@@ -84,7 +84,7 @@ StudentCache缓存的每一条记录为<Student, CoursePage>元组，设置缓�
 
 测试用例表如下：
 
-![1574411687563](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411687563.png)
+![1574411687563](https://github.com/AlieZ22/CourseSystem/tree/master/res/8.png)
 
-![1574411699136](C:\Users\MAIBENBEN\AppData\Roaming\Typora\typora-user-images\1574411699136.png)
+![1574411699136](https://github.com/AlieZ22/CourseSystem/tree/master/res/9.png)
 
